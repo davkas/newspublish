@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+    "http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<constant name="struts.il8n.encoding" value="utf-8"/>
+	<package name="default" extends="struts-default" namespace="/">
+		<action name="category" class="com.zhxrui.maven.newspublish">
+			<result name="clist">/category_list.jsp</result>
+		</action>
+	</package>
+</struts>
