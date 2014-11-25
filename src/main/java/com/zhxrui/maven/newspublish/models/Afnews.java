@@ -4,7 +4,7 @@ public class Afnews {
 	private int id;
 	private String title;
 	private String content;
-	private Date createTime;
+	private Date createtime;
 	private int sign;
 	public int getId() {
 		return id;
@@ -24,11 +24,11 @@ public class Afnews {
 	public void setContent(String content) {
 		this.content = content;
 	}
-	public Date getCreateTime() {
-		return createTime;
+	public Date getCreatetime() {
+		return createtime;
 	}
-	public void setCreateTime(Date createTime) {
-		this.createTime = createTime;
+	public void setCreatetime(Date createtime) {
+		this.createtime = createtime;
 	}
 	public int getSign() {
 		return sign;

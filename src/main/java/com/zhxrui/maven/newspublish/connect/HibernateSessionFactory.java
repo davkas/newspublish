@@ -9,21 +9,20 @@ import org.hibernate.service.ServiceRegistry;
 
 public class HibernateSessionFactory {
 	//  配置文件路径
-	private static String CONFIG_FILE_LOCATION="/hibernate.cfg.xml";
+	private static String CONFIG_FILE_LOCATION="hibernate.cfg.xml";
 	//实例化ThreadLocal类
 	private static final ThreadLocal<Session> threadLocal = new ThreadLocal<Session>();
 	//实例话Configuration
-	private static Configuration configuration = new Configuration();
+	private static Configuration configuration = new Configuration().configure();
 	//声明SessionFactory接口
 	private static SessionFactory sessionFactory;
 	//定义configFile属性
 	private static String configFile=CONFIG_FILE_LOCATION;
 	static{
 		try {
-			configuration.configure(configFile);
-			ServiceRegistry sr = new StandardServiceRegistryBuilder()
-					.applySettings(configuration.getProperties()).build();
-			sessionFactory = configuration.buildSessionFactory(sr);
+			sessionFactory = configuration.buildSessionFactory(new StandardServiceRegistryBuilder().applySettings(configuration.getProperties()).build());
+/*			sessionFactory = configuration.configure().buildSessionFactory(
+				    new StandardServiceRegistryBuilder().build() );*/
 		} catch (Exception e) {
 			// TODO: handle exception
 			e.printStackTrace();
@@ -45,13 +44,7 @@ public class HibernateSessionFactory {
 	private static void rebuildSessionFactory() {
 		// TODO Auto-generated method stub
 		try {
-			configuration.configure(configFile);
-			/*		ServiceRegistryBuilder builder = new ServiceRegistryBuilder().applySettings(configuration.getProperties());
-			ServiceRegistry registry = builder.buildServiceRegistry(); 
-			sessionFactory = configuration.buildSessionFactory(registry);*/
-			ServiceRegistry sr = new StandardServiceRegistryBuilder()
-					.applySettings(configuration.getProperties()).build();
-			sessionFactory = configuration.buildSessionFactory(sr);
+			sessionFactory = configuration.buildSessionFactory(new StandardServiceRegistryBuilder().applySettings(configuration.getProperties()).build());
 		} catch (Exception e) {
 			// TODO: handle exception
 			e.printStackTrace();

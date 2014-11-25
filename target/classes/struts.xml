@@ -5,7 +5,7 @@
 <struts>
 	<constant name="struts.il8n.encoding" value="utf-8"/>
 	<package name="default" extends="struts-default" namespace="/">
-		<action name="category" class="com.zhxrui.maven.newspublish">
+		<action name="category" class="com.zhxrui.maven.newspublish.actions.CategoryAction">
 			<result name="clist">/category_list.jsp</result>
 		</action>
 	</package>

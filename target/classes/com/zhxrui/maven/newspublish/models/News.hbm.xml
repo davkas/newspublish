@@ -9,7 +9,7 @@
 		</id>
 		<property name="title" length="100"/>
 		<property name="content" length="255"/>
-		<property name="createTime"/>
-		<many-to-one name="category" column="cid" class="com.mxl.models.Category" cascade="save-update" lazy="false"/>
+		<property name="createtime"/>
+		<many-to-one name="category" column="cid" class="com.zhxrui.maven.newspublish.models.Category" cascade="save-update" lazy="false"/>
 	</class>
 </hibernate-mapping>

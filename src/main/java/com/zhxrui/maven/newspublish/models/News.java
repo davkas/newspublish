@@ -6,7 +6,7 @@ public class News {
 	private int id;
 	private String title;
 	private String content;
-	private Date createTime;
+	private Date createtime;
 	private Category category;
 	
 	public int getId() {
@@ -27,11 +27,11 @@ public class News {
 	public void setContent(String content) {
 		this.content = content;
 	}
-	public Date getCreateTime() {
-		return createTime;
+	public Date getCreatetime() {
+		return createtime;
 	}
-	public void setCreateTime(Date createTime) {
-		this.createTime = createTime;
+	public void setCreatetime(Date createtime) {
+		this.createtime = createtime;
 	}
 	public Category getCategory() {
 		return category;
